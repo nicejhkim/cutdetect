@@ -1,0 +1,10 @@
+mediapipe==0.10.21
+opencv-python==4.11.0.86
+pillow==11.2.1
+rich==14.0.0
+scenedetect==0.6.6
+six==1.17.0
+torch==2.7.0
+torchvision==0.22.0
+transformers==4.52.4
+ultralytics==8.3.146
