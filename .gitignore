@@ -1,5 +1,6 @@
 detected_frames*
 detected_scenes*
 *.mp4
-detection_results*.json
+*.png
 *.pyc
+results*.json
