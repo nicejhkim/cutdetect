@@ -14,7 +14,8 @@
 - scenedetect(https://www.scenedetect.com/docs/latest/)를 이용해서 컷을 분리한다. 
 - ffmpeg 을 이용해서 분리하는 것에 비해 PC기준 3배 정도 더 걸린다. 하지만 사용하기 편하고 더 정확하다.
 - 컷 분리에 걸리는 시간은 전체 프로세스에서 큰 비중을 차지하지 않아서 scenedetect를 사용한다.
-  ```
+
+```
 # scenedetect(https://www.scenedetect.com/docs/)를 이용해서 원본 영상을 컷 단위로 분리
 def split_cuts_scenedetect(video_path: str, threshold: float = 30.0) -> list:
 ```
@@ -27,7 +28,7 @@ def split_cuts_scenedetect(video_path: str, threshold: float = 30.0) -> list:
 ## 3. frame 분석
 - 추출한 대표 frame에 특정한 객체가 있는지 찾아낸다.
 - 첫번째로 CLIP 모델을 이용하여 원하는 프롬프트를 inference 해본다. 여기서는 아래의 프롬프트로 테스트했다. 다양한 영상으로 테스트를 해 보고 프롬프트와 threshold 를 조정할 필요 있다.
-    ```
+```
 PROMPTS = [
     "a photo of a building exterior",
     "a tall skyscraper",
