@@ -3,7 +3,7 @@ import shutil
 import os, sys
 from common import utils
 from frame import frames, clip, yolo
-from scene import cut, split
+from cut import cut, detect
 
 from rich.panel import Panel
 from rich import print as rprint
@@ -27,7 +27,7 @@ PROMPTS = [
 ]
 CLIP_THRESHOLD = 0.7
 
-VIDEO_PATH = "samples/sinkhole.mp4"
+VIDEO_PATH = "samples/health.mp4"
 CONFIG = {
     'FRAMES_DIR': "frames_{}",
     'SCENES_DIR': "scenes_{}",
@@ -36,7 +36,7 @@ CONFIG = {
 
 def process(input_file: str):
     #1. 씬 단위 정보 
-    scenes = utils.measure_time('detect_scenes', split.split_scenes_scenedetect, input_file)
+    scenes = utils.measure_time('detect_scenes', detect.split_cuts_scenedetect, input_file)
     rprint(Panel(f"[green]🔍 총 감지된 씬 수: {len(scenes)}[/green]"))
 
     results = []

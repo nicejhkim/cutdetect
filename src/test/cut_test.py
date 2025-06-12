@@ -4,7 +4,7 @@ root_dir = os.getcwd()
 sys.path.insert(0, str(root_dir))
 
 from src.common import utils
-from src.scene import cut
+from src.cut import cut
 
 os.environ["TOKENIZERS_PARALLELISM"] = "false"
 
